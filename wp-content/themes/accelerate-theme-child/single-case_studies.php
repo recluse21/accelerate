@@ -34,8 +34,6 @@ get_header(); ?>
 				<h2><?php the_title(); ?></h2>
 				<h5><?php echo $services; ?></h5>
 				<h6>Client: <?php echo $client; ?></h6>
-				
-				<h6>Client: <?php echo $image_1; ?></h6>
 			
 				<?php the_content(); ?>
 				
