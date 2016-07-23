@@ -47,6 +47,29 @@
 	color: #45ac9d;
 	text-transform: uppercase;
 }
+
+ul.homepage-featured-work {
+	list-style-type: none;
+	margin-left:0px;
+	text-align:center;
+}
+
+.featured-work h4 {
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom:40px;
+}
+
+section.featured-work {
+	
+}
+
+li.individual-featured-work {
+	float:left;
+	padding-right:15px;
+	margin-bottom:130px;
+}
+
 /* Case Studies */
 
 aside.case-study-sidebar {
@@ -92,4 +115,5 @@ div.case-study-images img {
 
 .case-study-sidebar p{
 	padding-right:15px;
+	margin-top: 30px;
 }

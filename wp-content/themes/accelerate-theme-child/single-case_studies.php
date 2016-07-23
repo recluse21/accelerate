@@ -51,7 +51,7 @@ get_header(); ?>
 					<?php echo wp_get_attachment_image( $image_3, $size ); ?>
 				<?php } ?>
 			</div>
-
+		</article>
 			<?php endwhile; // end of the loop. ?>
 
 		</div><!-- #content -->
