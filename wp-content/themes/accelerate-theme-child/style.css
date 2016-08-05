@@ -306,31 +306,30 @@ img.alignleft.size-full {
 
 /* 404 page */
 
-.page-id-47379 h2 {
-	display:none;
+.error404 #content {
+	text-align: center;
 }
 
-.page-id-47379 h1 {
+.error404 h1 {
 	color: #45ac9d;
-	text-align: center;
+	
 	margin-top: 90px
 }
 
-.page-id-47379 a {
+.error404 p a {
 	color: #45ac9d;
 	font-weight:bold;
 }
 
-img.aligncenter.size-full.wp-image-47380 {
+.error404 img {
     margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-.page-id-47379 #main p{
-	text-align:center;
+.error404 p{
 	font-size: 17px;
 }
 
-.page-id-47379 .site-footer {
+.error404 .site-footer {
 	margin-top: 150px;
 }
