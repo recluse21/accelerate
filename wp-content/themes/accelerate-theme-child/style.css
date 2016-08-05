@@ -20,22 +20,24 @@
 }
 
 /* top nav menu styles */
-#masthead nav {
-	width:260px;
-}
 
 #masthead nav ul {
-	margin-top: -25px;
+	list-style-type: none;
 }
 
 #masthead nav ul li {
-	width: 60px;
-	float: left;
-	margin-left: 30px;
 	text-transform:uppercase;
+	display: inline;
 }
 
-.page-id-47354 #masthead nav ul #menu-item-47358, .blog #masthead nav ul #menu-item-10 {
+li#menu-item-47378, li#menu-item-47361, li#menu-item-10, li#menu-item-47358  {
+    margin-left: 24px;
+}
+
+.page-id-47354 #masthead nav ul #menu-item-47358, 
+.blog #masthead nav ul #menu-item-10, 
+.post-type-archive #masthead nav ul #menu-item-47361,
+.page-id-47362 #masthead nav ul #menu-item-47378 {
 	font-weight:bold;
 }
 
@@ -96,6 +98,21 @@ li.individual-featured-work:nth-child(2), li.individual-featured-work:nth-child(
 	/*padding-right:13px;*/
 }
 
+/* footer */
+.site-footer span {
+	color: #45ac9d;
+}
+
+nav.social-media-navigation ul {
+    list-style-type: none;
+	text-align: right;
+}
+
+nav.social-media-navigation ul li {
+    display: inline;
+}
+
+/* end footer */
 
 /* Case Studies */
 
@@ -169,4 +186,151 @@ div.case-study-images img {
 }
 #ninja_forms_field_2_div_wrap {
 	float:right;
+}
+
+/* About page */
+.page-id-47362 .site-main {
+	/*background: url("img/taxi-photo.jpg") no-repeat top center / cover rgba(0, 0, 0, 0);
+	background-attachment:fixed;*/
+	background: url("img/taxi-photo-about.jpg");
+	background-repeat: no-repeat;
+    background-position: top center;
+
+	background-size:100% 336px;
+}
+
+.page-id-47362 #about-top{
+	height: 253px;
+	color:#fff;	
+	text-align:center;
+	padding-top:75px;
+	padding-left:191px;
+	padding-right:191px;
+	padding-bottom:0px;
+	font-size:25px;
+}
+
+.page-id-47362 span {
+	color: #45ac9d;
+}
+
+#about-mid-top {
+	text-align:center;
+	padding-top:20px;
+	padding-bottom:70px;
+}
+#about-mid-top h4 {
+	font-size: 20px;
+}
+
+#about-cta {border-top:1px dotted #e3e1e1; text-align:center;}
+
+#about-cta p {  
+	float: right;
+    margin-top: -60px;
+    padding-left: 10px;
+    margin-right: 150px;
+}
+
+#about-cta h2 {
+	    /*float: left;*/
+    padding-top: 55px;
+    padding-bottom: 35px;
+    padding-right: 0px;
+    padding-left: 60px;
+    margin: 0px 0px 0px 70px;
+    width: 450px;
+}
+
+#about-cta a.button {
+	padding: 15px 70px 15px 70px;
+}
+
+section.image-left, section.image-left-2 {
+    width: 219px;
+    margin-right: 0px !important;
+    padding-right: 0px;
+	float:left;
+}
+
+section.image-left-2 {
+	margin-top: 100px;
+}
+
+section.image-right {
+    width: 219px;
+    margin-right: 150px;
+    margin-top: -45px;
+    float: right;
+	margin-bottom: 100px;
+}
+
+section.about-mid-1 {
+    width: 60%;
+    float: right;
+    margin-right: 50px;
+	margin-bottom: 70px;
+}
+
+section.about-mid-2 {
+    margin-bottom: 70px;
+    margin-left: 80px;
+    margin-top: 0px;
+    width: 100%;
+    padding-right: 0px;
+    margin-right: 0px !important;
+}
+
+.about-mid-1 h2 {
+    margin-top: 18px;
+	margin-bottom:20px;
+	font-weight: 600;
+}
+
+.about-mid-2 h2, .about-mid-2 p {
+	width: 60%;
+	float:left;
+}
+
+img.alignleft.size-full {
+    margin-left: 80px;
+}
+
+.page-id-47362 hr {
+	display: block;
+    background-color: #ffffff;
+    float: inherit;
+    height: 10px;
+    margin-bottom: 1190px;
+}
+
+/* 404 page */
+
+.page-id-47379 h2 {
+	display:none;
+}
+
+.page-id-47379 h1 {
+	color: #45ac9d;
+	text-align: center;
+	margin-top: 90px
+}
+
+.page-id-47379 a {
+	color: #45ac9d;
+	font-weight:bold;
+}
+
+img.aligncenter.size-full.wp-image-47380 {
+    margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.page-id-47379 #main p{
+	text-align:center;
+	font-size: 17px;
+}
+
+.page-id-47379 .site-footer {
+	margin-top: 150px;
 }
