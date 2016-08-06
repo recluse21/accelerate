@@ -61,6 +61,28 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 			<?php wp_reset_query(); // resets the altered query back to the original ?>
 		</div>
+		<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+		<div id="secondary" class="widget-area" role="complementary">
+			<h4 class="show">Recent Tweet</h4>
+			<h2>@Accelerate</h2>
+			<?php dynamic_sidebar( 'sidebar-2' ); ?>
+			<a href="<?php the_permalink(); ?>" class="read-more-link">Follow Us <span>&rsaquo;</span></a>
+		</div>
+		<?php endif; ?>
+		<div id="mailchimp" class="widget-area" role="complementary">
+			<h4>Mailing List</h4>
+			<h2>Subscribe to our newsletter</h2>
+			<p>
+				<label>Email address: </label>
+				<input type="email" name="EMAIL" placeholder="Your email address" required />
+			</p>
+
+			<p>
+				<input type="submit" value="Sign up &rsaquo;" id="button" />
+			</p>
+		</div>
 	</div>
 </section>
+
+
 <?php get_footer(); ?>
