@@ -3,8 +3,8 @@ Contributors: socialdude
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=seb.richter%40gmx%2enet&lc=LI
 Tags: social media, facebook, instagram, youtube, twitter, share, social share, buttons, counter, pop-up, subscription, icons
 Requires at least: 3.0
-Tested up to: 4.5.3
-Stable tag: 2.4.6
+Tested up to: 4.6
+Stable tag: 2.4.7
 License: GPLv2 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,10 @@ Note: This plugin requires CURL to be activated/installed on your server (which 
 
 
 == Changelog ==
+
+= 2.4.7 =
+* Missing counts for email follow option fixed (when there are no subscribers yet)
+* Extra explanation text added
 
 = 2.4.6 =
 * Corner case vulnerability fixed
