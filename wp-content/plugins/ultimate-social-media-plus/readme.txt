@@ -3,12 +3,12 @@ Contributors: socialdude
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZWYMA8LFHGHCC
 Tags: social media, facebook, instagram, youtube, twitter, share, social share, buttons, counter, pop-up, subscription, icons
 Requires at least: 3.0
-Tested up to: 4.7
-Stable tag: 2.5.1
+Tested up to: 4.7.2
+Stable tag: 2.5.6
 License: GPLv2 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Super-easy to use and 100% FREE social media plugin which adds social media icons to your website with tons of customization features! 
+Super-easy to use social media plugin which adds social media icons to your website with tons of customization features! 
 
 == Description ==
 
@@ -16,7 +16,7 @@ Super-easy to use and 100% FREE social media plugin which adds social media icon
 
 This plugin is based on https://wordpress.org/plugins/ultimate-social-media-icons/, giving it even more functions and making it even easier to use at the same time.  
 
-It's still 100% FREE and allows you to display social media icons on your website and tailor them to your needs. 
+The plugin allows you to display social media icons on your website and tailor them to your needs. 
 
 You can add icons for RSS, Email, Facebook, Twitter, LinkedIn, Google+, Pinterest, Instagram, Youtube, "Share" (covering 200+ other social media platforms) and upload custom icons of your choice. 
 
@@ -74,6 +74,18 @@ Note: This plugin requires CURL to be activated/installed on your server (which 
 
 
 == Changelog ==
+
+= 2.5.6 =
+* Activation/de-activation links optimized
+
+= 2.5.5 =
+* Notifications activated
+
+= 2.5.4 =
+* Notifications revised
+
+= 2.5.3 =
+* Notification added
 
 = 2.5.1 =
 * Instructions for troubleshooting optimized
@@ -268,5 +280,5 @@ Note: This plugin requires CURL to be activated/installed on your server (which 
 
 == Upgrade Notice ==
 
-= 2.5.1 =
-* Please upgrade
+= 2.5.6 =
+* Please upgrade!

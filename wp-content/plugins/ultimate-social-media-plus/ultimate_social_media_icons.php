@@ -7,7 +7,7 @@ Author: UltimatelySocial
 Text Domain: ultimate-social-media-plus
 Domain Path: /languages
 Author URI: http://ultimatelysocial.com
-Version: 2.5.1
+Version: 2.5.6
 License: GPLv2
 */
 
@@ -37,11 +37,10 @@ register_deactivation_hook(__FILE__, 'sfsi_plus_deactivate_plugin');
 register_uninstall_hook(__FILE__, 'sfsi_plus_Unistall_plugin');
 
 /*Plugin version setup*/
-if(!get_option('sfsi_plus_pluginVersion') || get_option('sfsi_plus_pluginVersion') < 2.51)
+if(!get_option('sfsi_plus_pluginVersion') || get_option('sfsi_plus_pluginVersion') < 2.56)
 {
 	add_action("init", "sfsi_plus_update_plugin");
 }
-
 //shortcode for the ultimate social icons {Monad}
 add_shortcode("DISPLAY_ULTIMATE_PLUS", "DISPLAY_ULTIMATE_PLUS");
 function DISPLAY_ULTIMATE_PLUS($args = null, $content = null)
@@ -616,6 +615,89 @@ function sfsi_plus_admin_notice()
 			</p>
 		</div>
 	<?php }
+	?>
+	<?php
+	if(get_option("sfsi_plus_show_premium_notification") == "yes")
+	{
+		?>
+		<style type="text/css">
+			.sfsi_plus_show_prem_notification a{
+			   	color: #fff;
+			   	text-decoration: underline;
+			}
+			form.sfsi_plus_premiumNoticeDismiss {
+			    display: inline-block;
+			    margin: 5px 0 0;
+			    vertical-align: middle;
+			}
+			.sfsi_plus_premiumNoticeDismiss input[type='submit']{
+				background-color: transparent;
+			    border: medium none;
+			    color: #fff;
+			    margin: 0;
+			    padding: 0;
+			    cursor: pointer;
+			}
+			
+		</style>
+	     <div class="updated sfsi_plus_show_prem_notification" style="<?php echo $style; ?>background-color: #38B54A; color: #fff; font-size: 18px;">
+			<div class="alignleft" style="margin: 9px 0;">
+		<?php _e( 'BIG NEWS : There is now a Premium Ultimate Social Media Plugin available with many more cool features: ', SFSI_PLUS_DOMAIN); ?><a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_settings_page&utm_campaign=notification_banner&utm_medium=banner" target="_blank"><?php _e( 'Check it out', SFSI_PLUS_DOMAIN); ?></a>	
+			</div>
+			<div class="alignright">
+				<form method="post" class="sfsi_plus_premiumNoticeDismiss">
+					<input type="hidden" name="sfsi-plus_dismiss-premiumNotice" value="true">
+					<input type="submit" name="dismiss" value="Dismiss" />
+				</form>
+			</div>
+		</div> 
+		<?php
+	}
+	
+	if(get_option("sfsi_plus_show_Setting_mobile_notification") == "yes")
+	{
+		$sfsi_plus_install_date = strtotime(get_option('sfsi_plus_installDate'));
+		$sfsi_plus_future_date = strtotime( '14 days',$sfsi_plus_install_date );
+		$sfsi_plus_past_date = strtotime("now");
+		if($sfsi_plus_past_date >= $sfsi_plus_future_date)
+		{
+			?>
+			<style type="text/css">
+				.sfsi_plus_show_mobile_setting_notification a{
+					color: #fff;
+					text-decoration: underline;
+				}
+				form.sfsi_plus_mobileNoticeDismiss {
+					display: inline-block;
+					margin: 5px 0 0;
+					vertical-align: middle;
+				}
+				.sfsi_plus_mobileNoticeDismiss input[type='submit']{
+					background-color: transparent;
+					border: medium none;
+					color: #fff;
+					margin: 0;
+					padding: 0;
+					cursor: pointer;
+				}
+				
+			</style>
+			
+			<!-- <div class="updated sfsi_plus_show_mobile_setting_notification" style="<?php echo $style; ?>background-color: #38B54A; color: #fff; font-size: 18px;">
+				<div class="alignleft" style="margin: 9px 0; width: 95%; line-height: 25px;">
+				<b><?php _e( 'Over 50% of visitors are mobile visitors:', SFSI_PLUS_DOMAIN); ?></b>	
+				<?php _e( ' Make sure your social media icons look good on mobile too, so that people like & share your site. With the premium plugin you can define the location of the icons separately on mobile: ', SFSI_PLUS_DOMAIN); ?><a href="https://www.ultimatelysocial.com/usmpremium/?utm_expid=92383224-1.TfahStjhTrSpmi_nxkXt1w.1&utm_source=usmplus_settings_page&utm_campaign=check_mobile&utm_medium=banner" target="_blank"><?php _e( 'Check it out', SFSI_PLUS_DOMAIN); ?></a>	
+				</div>
+				<div class="alignright">
+					<form method="post" class="sfsi_plus_mobileNoticeDismiss">
+						<input type="hidden" name="sfsi-plus_dismiss-settingmobileNotice" value="true">
+						<input type="submit" name="dismiss" value="Dismiss" />
+					</form>
+				</div>
+			</div> --> 
+			<?php
+		}
+	}
 }
 
 add_action('admin_init', 'sfsi_plus_dismiss_admin_notice');
@@ -631,6 +713,17 @@ function sfsi_plus_dismiss_admin_notice()
 	{
 		update_option( 'sfsi_plus_show_notification_plugin', "no" );
 		header("Location: ".site_url()."/wp-admin/admin.php?page=sfsi-plus-options");
+	}
+	
+	if ( isset($_REQUEST['sfsi-plus_dismiss-premiumNotice']) && $_REQUEST['sfsi-plus_dismiss-premiumNotice'] == 'true' )
+	{
+		update_option( 'sfsi_plus_show_premium_notification', "no" );
+		//header("Location: ".site_url()."/wp-admin/admin.php?page=sfsi-options");die;
+	}
+	if ( isset($_REQUEST['sfsi-plus_dismiss-settingmobileNotice']) && $_REQUEST['sfsi-plus_dismiss-settingmobileNotice'] == 'true' )
+	{
+		update_option( 'sfsi_plus_show_Setting_mobile_notification', "no" );
+		//header("Location: ".site_url()."/wp-admin/admin.php?page=sfsi-options");die;
 	}
 }
 
@@ -651,5 +744,15 @@ function sfsi_plus_get_bloginfo($url)
 		$web_url = site_url()."/feed";
 	}
 	return $web_url;
+}
+
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'sfsi_plus_action_links', -10 );
+function sfsi_plus_action_links ( $mylinks ){
+	$mylinks[] ='<a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_manage_plugin_page&utm_campaign=upgrade_to_pro&utm_medium=banner" style="color:#FF0000;"><b>Upgrade to pro</b></a>';
+	$mylinks[] =$mylinks['deactivate'];
+	$mylinks[] =$mylinks['edit'];
+	unset ($mylinks['deactivate']);
+	unset ($mylinks['edit']);
+	return $mylinks;
 }
 ?>

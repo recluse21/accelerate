@@ -99,7 +99,11 @@
 															: '';
 	$option8['sfsi_plus_rectfbshare'] 				= 	(isset($option8['sfsi_plus_rectfbshare']))
 															? sanitize_text_field($option8['sfsi_plus_rectfbshare'])
-															: '';														
+															: '';	
+															
+	$option8['sfsi_plus_show_premium_placement_box'] = 	(isset($option8['sfsi_plus_show_premium_placement_box']))
+															? sanitize_text_field($option8['sfsi_plus_show_premium_placement_box'])
+															: 'yes';													
 ?>
 <div class="tab8">
 	<ul class="sfsiplus_icn_listing8">
@@ -371,9 +375,14 @@
                                            (<?php  _e( 'may impact loading speed', SFSI_PLUS_DOMAIN ); ?>)
                                         </p>
                                     </li>
+                                    
 								</ul>	
                             </div>
-						
+                            <?php if($option8['sfsi_plus_show_premium_placement_box'] == 'yes'){ ?>
+						    <p class ="sfsi_plus_prem_plu_desc">	
+								<b><?php  _e( 'New: ', SFSI_PLUS_DOMAIN ); ?></b><?php  _e( 'We also added a Linkedin share-icon in the Premium Plugin.', SFSI_PLUS_DOMAIN ); ?> <a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_settings_page&utm_campaign=linkedin_icon&utm_medium=banner" target="_blank"><?php  _e( 'Check it out.', SFSI_PLUS_DOMAIN ); ?></a>
+							</p>
+                            <?php } ?>
                             <!--<p class="clear">Those are usually all you need: </p>
                             <ul class="usually" style="color:#5a6570">
                                 <li>1. Facebook is No.1 in liking, so it’s a must have</li>
@@ -483,7 +492,13 @@
                         <label class="first">
                         	<?php  _e( 'Text to appear before the sharing icons:', SFSI_PLUS_DOMAIN ); ?>
                         </label><input name="sfsi_plus_textBefor_icons" type="text" value="<?php echo ($option8['sfsi_plus_textBefor_icons']!='') ?  $option8['sfsi_plus_textBefor_icons'] : '' ; ?>" />
+                        <?php if($option8['sfsi_plus_show_premium_placement_box'] == 'yes'){ ?>
+                        <p class ="sfsi_plus_prem_plu_desc_define">	
+							<b><?php  _e( 'New: ', SFSI_PLUS_DOMAIN ); ?></b><?php  _e( ' In the Premium Plugin you can now also define the font size, type, and the margins below/above the icons. ', SFSI_PLUS_DOMAIN ); ?><a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_settings_page&utm_campaign=more_placement_options&utm_medium=banner" target="_blank"><?php  _e( 'Check it out.', SFSI_PLUS_DOMAIN ); ?></a>
+					    </p>
+					    <?php } ?>
                     </div>
+                    
                     <div class="options">
                         <label>
                          	<?php  _e( 'Alignment of share icons:', SFSI_PLUS_DOMAIN ); ?>
@@ -502,15 +517,22 @@
                     </div>
                     <!--<div class="options">
                         <label>Do you want to display the counts?</label><div class="field"><select name="sfsi_plus_icons_DisplayCounts" id="sfsi_plus_icons_DisplayCounts" class="styled"><option value="yes" <?php //echo ($option8['sfsi_plus_icons_DisplayCounts']=='yes') ?  'selected="true"' : '' ;?>>YES</option><option value="no" <?php //echo ($option8['sfsi_plus_icons_DisplayCounts']=='no') ?  'selected="true"' : '' ;?>>NO</option></select></div>
-                    </div>-->				
-                  </li>	
-					
+                    </div>-->	
+                    
+                  </li>
+                    	
 				</ul>	
 			</div>
 		</li>
 	</ul>
-	
-	
+	<?php if($option8['sfsi_plus_show_premium_placement_box'] == 'yes'){ ?>
+	<div class ="sfsi_plus_new_prmium_follw">
+		<p>
+			<b><?php  _e( 'New: ', SFSI_PLUS_DOMAIN ); ?></b><?php  _e( 'In our Premium Plugin you have many more placement options, e.g. place the icons statically on the page, optimize placement for mobile, don’t show them on certain pages, show them while user is scrolling down the page (or not) etc. ', SFSI_PLUS_DOMAIN ); ?><a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_settings_page&utm_campaign=more_placement_options&utm_medium=banner" target="_blank"><?php  _e( 'See all features', SFSI_PLUS_DOMAIN ); ?></a>
+		</p>
+    </div>
+    <?php } ?>
+    
 	<!-- SAVE BUTTON SECTION   --> 
 	<div class="save_button">
        <img src="<?php echo SFSI_PLUS_PLUGURL ?>images/ajax-loader.gif" class="loader-img" />

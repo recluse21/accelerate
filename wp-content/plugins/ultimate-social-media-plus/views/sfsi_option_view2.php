@@ -122,6 +122,19 @@
 	$option4['sfsi_plus_ytube_chnlid'] 			= 	(isset($option4['sfsi_plus_ytube_chnlid']))
 														? strip_tags(trim($option4['sfsi_plus_ytube_chnlid']))
 														: '';
+	$option2['sfsi_plus_premium_email_box'] 	= 	(isset($option2['sfsi_plus_premium_email_box'])) 
+														? sanitize_text_field($option2['sfsi_plus_premium_email_box'])
+														: 'yes';
+	$option2['sfsi_plus_premium_facebook_box'] 	= 	(isset($option2['sfsi_plus_premium_facebook_box'])) 
+														? sanitize_text_field($option2['sfsi_plus_premium_facebook_box'])
+														: 'yes';
+	$option2['sfsi_plus_premium_twitter_box'] 	= 	(isset($option2['sfsi_plus_premium_twitter_box'])) 
+														? sanitize_text_field($option2['sfsi_plus_premium_twitter_box'])
+														: 'yes';
+																																								
+	$option2['sfsi_plus_premium_google_box'] 	= 	(isset($option2['sfsi_plus_premium_google_box'])) 
+														? sanitize_text_field($option2['sfsi_plus_premium_google_box'])
+														: 'yes';
 		
 ?>
 <!-- Section 2 "What do you want the icons to do?" main div Start -->
@@ -202,6 +215,13 @@
                     </label>
                 </li>
             </ul>
+            <?php if($option2['sfsi_plus_premium_email_box'] =='yes') { ?>
+            <div class ="sfsi_plus_new_prmium_follw">
+				<p>	
+					<b><?php _e( 'New:', SFSI_PLUS_DOMAIN); ?></b><?php _e( ' In our Premium Plugin you can now give your email icon other functions too, e.g. contact you (email), share by email, and link to a certain page (e.g. your contact form or newsletter sign-up site). ', SFSI_PLUS_DOMAIN); ?><a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_settings_page&utm_campaign=more_functions_email_icon&utm_medium=banner" target="_blank"><?php _e( 'See all features.', SFSI_PLUS_DOMAIN); ?></a>
+				</p>
+            </div>
+            <?php } ?>
         </div>
     </div>
     <!-- END EMAIL ICON -->
@@ -245,6 +265,14 @@
             		<?php  _e( 'Share my blog with friends (on Facebook)', SFSI_PLUS_DOMAIN); ?> 
             	</label>
             </p>
+            <?php if($option2['sfsi_plus_premium_facebook_box'] =='yes') { ?>
+            <div class="sfsi_plus_new_prmium_follw">
+				<p>
+					<b><?php  _e( 'New:', SFSI_PLUS_DOMAIN); ?></b>	<?php  _e( ' In our Premium Plugin you can also allow users to follow you on Facebook directly from your site (without leaving your page, increasing followers). ', SFSI_PLUS_DOMAIN); ?><a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_settings_page&utm_campaign=direct_follow_facebook&utm_medium=banner" target="_blank"> 	<?php  _e( 'See all features.', SFSI_PLUS_DOMAIN); ?> </a>					
+				</p>
+            </div>
+            <?php } ?>
+            
         </div>
     </div>
     <!-- END FACEBOOK ICON -->
@@ -290,6 +318,13 @@
              	</label>
                 <textarea name="sfsi_plus_twitter_aboutPageText" id="sfsi_plus_twitter_aboutPageText" type="text" class="add_txt" placeholder="Hey, check out this cool site I found: www.yourname.com #Topic via@my_twitter_name" /><?php echo ($option2['sfsi_plus_twitter_aboutPageText']!='') ?  stripslashes($option2['sfsi_plus_twitter_aboutPageText']) : 'Hey check out this cool site I found' ;?></textarea>
              </div>
+            <?php if($option2['sfsi_plus_premium_twitter_box'] =='yes') { ?>
+            <div class= "sfsi_plus_new_prmium_follw">
+				<p>
+					<b><?php  _e( 'New: ', SFSI_PLUS_DOMAIN ); ?></b><?php  _e( ' In our Premium Plugin you can also insert tags to automatically pull the title of the story, as well as the link to the story. ', SFSI_PLUS_DOMAIN ); ?><a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_settings_page&utm_campaign=better_tweets&utm_medium=banner" target="_blank"><?php  _e( 'See all features', SFSI_PLUS_DOMAIN ); ?></a>
+			    </p>
+			</div>
+            <?php } ?>
         </div>
     </div>
     <!-- END TWITTER ICON -->
@@ -330,6 +365,13 @@
             		<?php  _e( 'Share my blog with friends (on Google+)', SFSI_PLUS_DOMAIN ); ?>
             	</label>
             </p>
+            <?php if($option2['sfsi_plus_premium_google_box'] =='yes') { ?>
+            <div class ="sfsi_plus_new_prmium_follw" >
+				<p>
+				   <b><?php  _e( 'New: ', SFSI_PLUS_DOMAIN ); ?></b><?php  _e( 'In our Premium Plugin you can also allow users to follow you on Google+ directly from your site (without leaving your page, increasing followers). ', SFSI_PLUS_DOMAIN ); ?><a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_settings_page&utm_campaign=direct_follow_google&utm_medium=banner" target="_blank"><?php  _e( 'See all features', SFSI_PLUS_DOMAIN ); ?></a>
+				</p>
+            </div>
+            <?php } ?>
         </div>
     </div>
     <!-- END GOOGLE ICON -->

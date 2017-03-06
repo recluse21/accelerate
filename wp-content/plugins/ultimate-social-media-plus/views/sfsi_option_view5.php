@@ -90,7 +90,9 @@
 	$option5['sfsi_plus_houzz_MouseOverText']	= 	(isset($option5['sfsi_plus_houzz_MouseOverText']))
 														? sanitize_text_field($option5['sfsi_plus_houzz_MouseOverText'])
 														: '';
-
+    $option5['sfsi_plus_premium_size_box']	= 	(isset($option5['sfsi_plus_premium_size_box']))
+														? sanitize_text_field($option5['sfsi_plus_premium_size_box'])
+														: 'yes';
 				
 	$visit_iconsUrl = SFSI_PLUS_PLUGURL."images/visit_icons/";
   	if(is_array($custom_icons_order) ) 
@@ -450,6 +452,13 @@
          		<?php  _e( 'Pixels', SFSI_PLUS_DOMAIN ); ?>
          	</ins>
     	</div>
+    	<?php if($option5['sfsi_plus_premium_size_box'] == 'yes') { ?>
+    	<div class="sfsi_plus_icons_prem_disc">
+            <p class="sfsi_plus_prem_plu_desc">
+				<b><?php  _e( 'New: ', SFSI_PLUS_DOMAIN ); ?></b><?php  _e( 'The Premium Plugin also allows you to define the vertical distance between the icons (and set this differently for mobile vs. desktop): ', SFSI_PLUS_DOMAIN ); ?><a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmplus_settings_page&utm_campaign=more_spacings&utm_medium=banner" target="_blank"><?php  _e( 'Check it out', SFSI_PLUS_DOMAIN ); ?></a>
+				</p>
+        </div>
+        <?php } ?>
     </div>
     
     <div class="row">
